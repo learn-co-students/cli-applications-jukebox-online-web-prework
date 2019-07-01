@@ -59,10 +59,16 @@ def run(songs)
   until input == "exit" do #until exit is inputed, following loop will be executed
     if input == "help"
       help
+      puts "Please enter a command:"
+     user_command = gets.chomp
     elsif input == "list"
       list(songs)
+      puts "Please enter a command:"
+     user_command = gets.chomp
     else input == "play"
       play(songs)
+      puts "Please enter a command:"
+     user_command = gets.chomp
     end
   end
   exit_jukebox
