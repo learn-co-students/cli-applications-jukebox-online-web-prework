@@ -39,24 +39,36 @@ def help()
  puts"- exit : exits this program"
 end
 
-def list
-songs.each_with_index do |song, index| 
-puts "The index is #{index}"
-  puts "The value is #{song}"
+def list(songs)
+   songs.each_with_index do |song, index| 
+puts  "#{index +1}. #{song}"
+
 end
 end
 def play(songs)
-     puts"Please enter a song name or number:"
-     input=gets.chomp
-     
-  if input >=1 && input <= songs.length
-    puts "Playing <song name>"
+ 
+  puts"Please enter a song name or number:"
+    input = gets.chomp
+      
+  if input.to_i >=1 && input.to_i <= songs.length
+    
+    
+    puts "Playing #{songs[input.to_i - 1]}"
+elsif songs.include?(input)
+   puts "Playing #{input}"
+ else
+   puts "Invalid input, please try again"
+   
+end
+end
+def exit_jukebox
+ puts "Goodbye"
 
 end
-end
-def exit
-  input=gets.chomp
-exit
-puts "goodbye"
+def run
+  
+ puts "Please enter a command"
+ input = gets.chomp
 
 end
+d
