@@ -31,9 +31,10 @@ end;
 def play(songs);
   p("Please enter a song name or number:");
   what_user_had_typed_in = gets.strip;
-  if songs.include?(what_user_had_typed_in);
+  case # .include? works in case when case is blank instead of what the user had typed in...
+  when songs.include?(what_user_had_typed_in);
     p("Playing #{songs.find{|song| song == what_user_had_typed_in}}");
-  elsif  what_user_had_typed_in.to_i <= songs.size && what_user_had_typed_in.to_i > 0;
+  when  what_user_had_typed_in.to_i <= songs.size && what_user_had_typed_in.to_i > 0;
     p("Playing #{songs[what_user_had_typed_in.to_i-1]}");
   else;
     p("Invalid input, please try again");
@@ -53,5 +54,5 @@ p("- exit : exits this program");
 end;
 
 def list(songs);
-  return (songs.each_with_index do |song, index| p("#{index+1}. #{song}"); end);
+  return(songs.each_with_index do |song, index| p("#{index+1}. #{song}"); end);
 end;
