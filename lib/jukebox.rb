@@ -8,51 +8,51 @@
 #
 # puts say_hello(users_name);
 
-def run(songs);
-  while true do;
+def run(songs)
+  while(!false) do
     p("Please enter a command:");
     what_user_typed_in_as_string = gets.strip;
-    case(what_user_typed_in_as_string);
-    when("play");
+    case(what_user_typed_in_as_string)
+    when("play")
       play(songs);
-    when("list");
+    when("list")
       list(songs);
-    when("help");
+    when("help")
       help;
-    when "exit";
+    when "exit"
       exit_jukebox;
       break;
-    else;
+    else
       p("Invalid entry");
-    end;
-  end;
-end;
+    end
+  end
+end
 
-def play(songs);
+def play(songs)
   p("Please enter a song name or number:");
   what_user_had_typed_in = gets.strip;
-  case # .include? works in case when case is blank instead of what the user had typed in...
-  when songs.include?(what_user_had_typed_in);
+  case # .include? works in case when case is blank instead of what the user had typed in...Learned this from: https://stackoverflow.com/questions/40868693/can-i-use-include-in-a-case-statement-ruby
+  when songs.include?(what_user_had_typed_in)
     p("Playing #{songs.find{|song| song == what_user_had_typed_in}}");
-  when  what_user_had_typed_in.to_i <= songs.size && what_user_had_typed_in.to_i > 0;
+  when  what_user_had_typed_in.to_i <= songs.size && what_user_had_typed_in.to_i > 0
     p("Playing #{songs[what_user_had_typed_in.to_i-1]}");
-  else;
+  else
     p("Invalid input, please try again");
-  end;
-end;
+  end
+end
 
-def exit_jukebox;
+def exit_jukebox
   p("Goodbye");
-end;
+end
 
-def help;
+def help
 p("I accept the following commands:");
 p("- play : lets you choose a song to play");
 p("- list : displays a list of songs you can play");
 p("- help : displays this help message");
 p("- exit : exits this program");
-end;
+end
 
-def list(songs);
+def list(songs)
   return(songs.each_with_index do |song, index| p("#{index+1}. #{song}"); end);
-end;
+end
