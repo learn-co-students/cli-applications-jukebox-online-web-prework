@@ -31,7 +31,7 @@ end;
 def play(songs);
   p("Please enter a song name or number:");
   what_user_had_typed_in = gets.strip;
-  if songs.include?(what_user_had_typed_in)
+  if songs.include?(what_user_had_typed_in);
     p("Playing #{songs.find{|song| song == what_user_had_typed_in}}");
   elsif  what_user_had_typed_in.to_i <= songs.size && what_user_had_typed_in.to_i > 0;
     p("Playing #{songs[what_user_had_typed_in.to_i-1]}");
