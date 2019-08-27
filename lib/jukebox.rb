@@ -32,27 +32,27 @@ end
 
 
 def run(songs)
-  puts "Please enter a command:"
-  user_input = gets.strip
 
-  while user_input
+
+  while true
+    puts "Please enter a command:"
+    user_input = gets.strip
 
     case user_input
-    when 'list' then
+    when 'list'
       list(songs)
-      puts "Please enter a command:"
-      user_input = gets.strip
-    when 'help' then
+
+    when 'help'
       help
-      puts "Please enter a command:"
-      user_input = gets.strip
-    when 'play' then
+
+    when 'play'
       play(songs)
-      puts "Please enter a command:"
-      user_input = gets.strip
-    when 'exit' then
+
+    when 'exit'
       exit_jukebox
       break
+    else
+      puts "Invalid Entry"
     end
   end
 
