@@ -19,14 +19,16 @@ puts  "- list : displays a list of songs you can play"
 puts "- exit : exits this program"
 end 
 
-def list(songs)
-  songs.each_with_index { |item, index | p "#{index}.#{item}"}
-  end 
+
   
-  def play(songs)
+def list(songs_array)
+  songs_array.each_with_index {|item, index| puts " #{index + 1}. #{item}"}
+end
+
+  def play(songs_array)
     puts "Please enter a song name or number:"
-    user_input.gets.strip
-    if user_input == songs 
+    user_input = gets.strip
+    if user_input == songs_array
       puts "Playing <song name>"
     else
       puts "Invalid input, please try again"
