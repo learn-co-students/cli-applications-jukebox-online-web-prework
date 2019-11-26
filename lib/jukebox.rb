@@ -29,17 +29,36 @@ def help
 end
 
 def list(songs)
-  songs.each_with_index + 1
+  songs.each_with_index do |song, index|
+    puts "#{index+1}. #{song}"
+  end
 end
 
-def play(songs) 
+def play(songs)
   puts "Please enter a song name or number:"
   input = gets.strip
-  if
-    puts "Playing #{input}"
+  if input.to_i == 0
+    if songs.include?(input)
+      puts "Playing #{input}"
+    else
+      puts "Invalid input, please try again"
+    end
+  else
+    if songs[input.to_i]
+      puts "Playing #{songs[input.to_i - 1]}"
+    else
+      puts "Invalid input, please try again"
+    end
   end
 end
 
 def exit_jukebox
   puts "Goodbye"
+end
+
+
+def run(songs)
+
+
+
 end
