@@ -34,12 +34,17 @@ def play(songs)
   end
   puts "Please enter a song name or number:"
   user_input = gets.strip
-  song_hash.each do |num, title|
-    if user_input == song_hash[num] || user_input == song_hash[title]
-      
+  if song_hash.include?(user_input)
+    puts "Playing #{song_hash[user_input]}"
+  elsif song_hash.value?(user_input)
+    puts "Playing #{song_hash[song_hash.key(user_input)]}"
+  else
+    puts "Invalid input, please try again"
   end
 end
 
 def exit_jukebox
   puts "Goodbye"
 end
+
+# play(songs)
