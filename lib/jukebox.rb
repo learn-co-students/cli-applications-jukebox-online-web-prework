@@ -63,10 +63,11 @@ def run(songs)
       run(songs)
     else
       puts "Invalid Command"
-      run
+      run(songs)
     end
   end
   exit_jukebox
+  exit!
 end
 
 run(songs)
