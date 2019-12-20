@@ -30,11 +30,14 @@ def play(songs)
   songs.each_with_index do |song, index|
     if !song_hash[(index + 1).to_s]
       song_hash[(index + 1).to_s] = song
-      # binding.pry
     end
   end
   puts "Please enter a song name or number:"
   user_input = gets.strip
+  song_hash.each do |num, title|
+    if user_input == song_hash[num] || user_input == song_hash[title]
+      
+  end
 end
 
 def exit_jukebox
