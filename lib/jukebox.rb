@@ -54,15 +54,19 @@ def run(songs)
     case command
     when "list"
       list(songs)
+      run(songs)
     when "play"
       play(songs)
+      run(songs)
     when "help"
       help
+      run(songs)
     else
       puts "Invalid Command"
       run
     end
   end
   exit_jukebox
-  break
 end
+
+run(songs)
