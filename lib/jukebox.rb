@@ -26,6 +26,13 @@ def list(songs)
 end
 
 def play(songs)
+  song_hash = {}
+  songs.each_with_index do |song, index|
+    if !song_hash[(index + 1).to_s]
+      song_hash[(index + 1).to_s] = song
+      # binding.pry
+    end
+  end
   puts "Please enter a song name or number:"
   user_input = gets.strip
 end
@@ -33,5 +40,3 @@ end
 def exit_jukebox
   puts "Goodbye"
 end
-
-list(songs)
