@@ -130,7 +130,7 @@ methods we will write will operate on this array of songs.
 
 ### The `help` Method
 
-This method should `puts` out the following:
+<!-- This method should `puts` out the following:
 
 ```bash
 I accept the following commands:
@@ -140,11 +140,11 @@ I accept the following commands:
 - exit : exits this program
 ```
 
-Remember that a `puts` will be needed for _each_ new line of output.
+Remember that a `puts` will be needed for _each_ new line of output. -->
 
 ### The `list` Method
 
-This method takes in an argument of the `songs` array and outputs each song in
+<!-- This method takes in an argument of the `songs` array and outputs each song in
 the array on a new line. A number should be listed before each song, indicating
 that songs track number:
 
@@ -164,7 +164,7 @@ that songs track number:
 index number of a given element as you step through the iteration. Remember that
 arrays are indexed starting at `0`. So, adding `1` to the index number at a
 given step of the iteration will result in the correct song number for the
-purposes of outputting your list of songs.
+purposes of outputting your list of songs. -->
 
 ### The `play` Method
 
@@ -178,7 +178,7 @@ If the user's response is a valid song number or song name, the method should
 
 ### The `exit_jukebox` Method
 
-This method is simple. It `puts` out: `"Goodbye"`.
+# This method is simple. It `puts` out: `"Goodbye"`.
 
 ### The `run` Method
 
